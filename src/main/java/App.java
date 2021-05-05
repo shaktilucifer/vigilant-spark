@@ -26,7 +26,7 @@ public class App {
                         AppConfig.newBuilder()
                                 .withSize(50, 50)
 //                                .withDefaultTileset(CP437TilesetResources.anikki16x16())
-                                .withDefaultGraphicalTileset(GraphicalTilesetResources.nethack16x16())
+                                .withDefaultTileset(GraphicalTilesetResources.nethack16x16())
 //                                .withDebugMode(true)
                                 .build()
                 );
@@ -45,12 +45,9 @@ public class App {
         tileGrid.draw(background, Position.zero());
         tileGrid.draw(
                 Tile.newBuilder()
-                        .buildGraphicalTile()
-                        .withName("Giant ant")
-                        .withTags(new HashSet<>(Arrays.asList("animal", "ant", "giant")))
+                        .withTileset(GraphicalTilesetResources.nethack16x16())
                         .withName("Pyrolisk")
-                        .withForegroundColor(ANSITileColor.MAGENTA)
-                        .toBuilder().build(), Position.create(2, 5)
+                        .buildGraphicalTile(), Position.create(2, 5)
         );
 
 
