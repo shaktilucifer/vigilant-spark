@@ -8,5 +8,9 @@ public class Actor {
     private int hitPoints;
     private int attack;
     private int defense;
-    
+    private int modifier;
+
+    public int calculateDamage() {
+       return attack - defense;
+    }
 }
